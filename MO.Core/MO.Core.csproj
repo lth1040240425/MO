@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5940B54-8DEF-4327-8CE3-A55F0C62D328}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MO.Core</RootNamespace>
+    <AssemblyName>MO.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\Operator.cs" />
+    <Compile Include="Data\EntityBase.cs" />
+    <Compile Include="Data\Extensions\CollectionExtensions.cs" />
+    <Compile Include="Data\Extensions\EntityInterfaceExtensions.cs" />
+    <Compile Include="Data\IEntity.cs" />
+    <Compile Include="Data\IEntityDto.cs" />
+    <Compile Include="Data\Infrastructure\IAudited.cs" />
+    <Compile Include="Data\Infrastructure\ICreatedAudited.cs" />
+    <Compile Include="Data\Infrastructure\ICreatedTime.cs" />
+    <Compile Include="Data\Infrastructure\IExpirable.cs" />
+    <Compile Include="Data\Infrastructure\ILockable.cs" />
+    <Compile Include="Data\Infrastructure\IRecyclable.cs" />
+    <Compile Include="Data\Infrastructure\ITimestamp.cs" />
+    <Compile Include="Data\Infrastructure\IUpdateAutited.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="Data\TransactionalBehavior.cs" />
+    <Compile Include="Dependency\ActivatorUtilities.cs" />
+    <Compile Include="Dependency\IDependency.cs" />
+    <Compile Include="Dependency\IIocBuilder.cs" />
+    <Compile Include="Dependency\IIocResolver.cs" />
+    <Compile Include="Dependency\IocBuilderBase.cs" />
+    <Compile Include="Dependency\IoCServiceProvider.cs" />
+    <Compile Include="Dependency\IScopeDependency.cs" />
+    <Compile Include="Dependency\IServiceCollection.cs" />
+    <Compile Include="Dependency\IServicesBuilder.cs" />
+    <Compile Include="Dependency\ISingletonDependency.cs" />
+    <Compile Include="Dependency\ITransientDependency.cs" />
+    <Compile Include="Dependency\LifetimeStyle.cs" />
+    <Compile Include="Dependency\ObjectFactory.cs" />
+    <Compile Include="Dependency\ScopeDependencyTypeFinder.cs" />
+    <Compile Include="Dependency\ServiceBuildOptions.cs" />
+    <Compile Include="Dependency\ServiceCollection.cs" />
+    <Compile Include="Dependency\ServiceCollectionExtensions.cs" />
+    <Compile Include="Dependency\ServiceDescriptor.cs" />
+    <Compile Include="Dependency\ServiceProviderExtensions.cs" />
+    <Compile Include="Dependency\ServicesBuilder.cs" />
+    <Compile Include="Dependency\SingtonDependencyTypeFinder.cs" />
+    <Compile Include="Dependency\TransientDependencyTypeFinder.cs" />
+    <Compile Include="Extensions\ClaimsIdentityExtensions.cs" />
+    <Compile Include="Logging\DataLog.cs" />
+    <Compile Include="Logging\DataLogItem.cs" />
+    <Compile Include="Logging\OperateLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reflection\DirectoryAssemblyFinder.cs" />
+    <Compile Include="Reflection\IAllAssemblyFinder.cs" />
+    <Compile Include="Reflection\IAssemblyFinder.cs" />
+    <Compile Include="Reflection\IFinder.cs" />
+    <Compile Include="Reflection\IMethodInfoFinder.cs" />
+    <Compile Include="Reflection\ITypeFinder.cs" />
+    <Compile Include="Security\IEntityInfo.cs" />
+    <Compile Include="Security\IEntityInfoHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MO.Utility\MO.Utility.csproj">
+      <Project>{1AE6F612-ACC1-402E-8CF9-B4B4AF7CF200}</Project>
+      <Name>MO.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
