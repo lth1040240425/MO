@@ -109,7 +109,7 @@ namespace MO.Utility.Filter
                 PropertyInfo property = type.GetProperty(propertyName);
                 if (property == null)
                 {
-                    throw new OAException(string.Format(Resources.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
+                    throw new MOException(string.Format(Resources.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
                 }
                 type = property.PropertyType;
                 propertyAccess = Expression.MakeMemberAccess(propertyAccess, property);

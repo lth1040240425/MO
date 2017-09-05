@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configs\BasicLoggingConfig.cs" />
+    <Compile Include="Configs\ConfigFile\Data\ContextCollection.cs" />
+    <Compile Include="Configs\ConfigFile\Data\ContextElement.cs" />
+    <Compile Include="Configs\ConfigFile\Data\CreateDatabaseInitializerElement.cs" />
+    <Compile Include="Configs\ConfigFile\Data\DataElement.cs" />
+    <Compile Include="Configs\ConfigFile\Data\DbContextInitializerElement.cs" />
+    <Compile Include="Configs\ConfigFile\Logging\BasicLoggingElement.cs" />
+    <Compile Include="Configs\ConfigFile\Logging\DataLoggingElement.cs" />
+    <Compile Include="Configs\ConfigFile\Logging\LoggingAdapterCollection.cs" />
+    <Compile Include="Configs\ConfigFile\Logging\LoggingAdapterElement.cs" />
+    <Compile Include="Configs\ConfigFile\Logging\LoggingElement.cs" />
+    <Compile Include="Configs\ConfigFile\Logging\LoggingEntryElement.cs" />
+    <Compile Include="Configs\ConfigFile\MOFrameworkSection.cs" />
+    <Compile Include="Configs\DataConfig.cs" />
+    <Compile Include="Configs\DataLoggingConfig.cs" />
     <Compile Include="Configs\DbContextConfig.cs" />
+    <Compile Include="Configs\DbContextInitializerConfig.cs" />
+    <Compile Include="Configs\IDataConfigReseter.cs" />
+    <Compile Include="Configs\ILoggingConfigReseter.cs" />
+    <Compile Include="Configs\LoggingAdapterConfig.cs" />
+    <Compile Include="Configs\LoggingConfig.cs" />
+    <Compile Include="Configs\LoggingEntryConfig.cs" />
+    <Compile Include="Configs\MOConfig.cs" />
     <Compile Include="Context\Operator.cs" />
     <Compile Include="Data\EntityBase.cs" />
     <Compile Include="Data\Extensions\CollectionExtensions.cs" />
@@ -84,7 +107,18 @@
     <Compile Include="Extensions\ClaimsIdentityExtensions.cs" />
     <Compile Include="Logging\DataLog.cs" />
     <Compile Include="Logging\DataLogItem.cs" />
+    <Compile Include="Logging\IDataLogCache.cs" />
     <Compile Include="Logging\OperateLog.cs" />
+    <Compile Include="Mapping\IMapper.cs" />
+    <Compile Include="Mapping\IMappersBuilder.cs" />
+    <Compile Include="Mapping\IMapSourceTypeFinder.cs" />
+    <Compile Include="Mapping\IMapTargetTypeFinder.cs" />
+    <Compile Include="Mapping\IMapTuple.cs" />
+    <Compile Include="Mapping\InputDtoTypeFinder.cs" />
+    <Compile Include="Mapping\MapperExtensions.cs" />
+    <Compile Include="Mapping\MappersBuilder.cs" />
+    <Compile Include="Mapping\MapTupleBase.cs" />
+    <Compile Include="Mapping\OutputDtoTypeFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

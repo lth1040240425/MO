@@ -196,7 +196,7 @@ namespace MO.Utility.Filter
             {
                 return bodys.Aggregate(Expression.OrElse);
             }
-            throw new OAException(Resources.Filter_GroupOperateError);
+            throw new MOException(Resources.Filter_GroupOperateError);
         }
 
         private static Expression GetExpressionBody(ParameterExpression param, FilterRule rule)

@@ -1,17 +1,29 @@
-﻿using MO.Core.Data;
+﻿using MO.Core.Configs;
+using MO.Core.Data;
+using MO.Core.Logging;
+using MO.Data.Entity.Properties;
+using MO.Utility.Exceptions;
+using MO.Utility.Extensions;
 using MO.Utility.Logging;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Infrastructure.Interception;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.Validation;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using TransactionalBehavior = MO.Core.Data.TransactionalBehavior;
 
 namespace MO.Data.Entity
 {
@@ -107,7 +119,7 @@ namespace MO.Data.Entity
         /// <returns></returns>
         private static DbContextConfig GetDbContextConfig()
         {
-            return _contextConfig ?? (_contextConfig = OAConfig.Instance.DataConfig.ContextConfigs
+            return _contextConfig ?? (_contextConfig = MOConfig.Instance.DataConfig.ContextConfigs
                 .FirstOrDefault(m => m.ContextType == typeof(TDbContext)));
         }
 
@@ -262,7 +274,7 @@ namespace MO.Data.Entity
                 {
                     SqlException sqlEx = e.InnerException.InnerException as SqlException;
                     string msg = DataHelper.GetSqlExceptionMessage(sqlEx.Number);
-                    throw new OAException("提交数据更新时发生异常：" + msg, sqlEx);
+                    throw new MOException("提交数据更新时发生异常：" + msg, sqlEx);
                 }
                 throw;
             }
@@ -350,7 +362,7 @@ namespace MO.Data.Entity
                 {
                     SqlException sqlEx = e.InnerException.InnerException as SqlException;
                     string msg = DataHelper.GetSqlExceptionMessage(sqlEx.Number);
-                    throw new OAException("提交数据更新时发生异常：" + msg, sqlEx);
+                    throw new MOException("提交数据更新时发生异常：" + msg, sqlEx);
                 }
                 throw;
             }
