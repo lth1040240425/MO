@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MO.Data.Entity.Defaults
+namespace MO.Data.Entity
 {
     /// <summary>
     /// 默认 EntityFramework 数据上下文

@@ -105,6 +105,9 @@
     <Compile Include="Dependency\SingtonDependencyTypeFinder.cs" />
     <Compile Include="Dependency\TransientDependencyTypeFinder.cs" />
     <Compile Include="Extensions\ClaimsIdentityExtensions.cs" />
+    <Compile Include="Initialize\FrameworkInitializer.cs" />
+    <Compile Include="Initialize\IDatabaseInitializer.cs" />
+    <Compile Include="Initialize\IFrameworkInitializer.cs" />
     <Compile Include="Logging\DataLog.cs" />
     <Compile Include="Logging\DataLogItem.cs" />
     <Compile Include="Logging\IDataLogCache.cs" />

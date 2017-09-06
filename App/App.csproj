@@ -215,6 +215,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MO.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -252,6 +253,32 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Models.ModelConfigurations\Demo.Models.ModelConfigurations.csproj">
+      <Project>{0fbd557c-f661-4561-92b8-accc65b84e62}</Project>
+      <Name>Demo.Models.ModelConfigurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models\Demo.Models.csproj">
+      <Project>{f5a9ebc8-43c7-45d4-9aa8-d9c8c8cd3f3a}</Project>
+      <Name>Demo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MO.Autofac.Mvc\MO.Autofac.Mvc.csproj">
+      <Project>{2fa75fb9-b344-4125-a5e7-88bd3d94ff34}</Project>
+      <Name>MO.Autofac.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MO.Core\MO.Core.csproj">
+      <Project>{d5940b54-8def-4327-8ce3-a55f0c62d328}</Project>
+      <Name>MO.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MO.Data.Entity\MO.Data.Entity.csproj">
+      <Project>{ed0695f3-57b6-448d-a026-6b916944b23e}</Project>
+      <Name>MO.Data.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MO.Utility\MO.Utility.csproj">
+      <Project>{1ae6f612-acc1-402e-8cf9-b4b4af7cf200}</Project>
+      <Name>MO.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

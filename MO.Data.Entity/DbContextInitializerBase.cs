@@ -1,5 +1,4 @@
 ﻿using MO.Core.Data;
-using MO.Data.Entity.Defaults;
 using MO.Data.Entity.Migrations;
 using MO.Data.Entity.Properties;
 using MO.Utility.Extensions;
