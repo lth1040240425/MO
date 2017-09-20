@@ -263,6 +263,10 @@
       <Project>{f5a9ebc8-43c7-45d4-9aa8-d9c8c8cd3f3a}</Project>
       <Name>Demo.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Demo.Service\Demo.Service.csproj">
+      <Project>{8ff33c66-dd87-4f43-be7e-4a6dc6cf60db}</Project>
+      <Name>Demo.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MO.Autofac.Mvc\MO.Autofac.Mvc.csproj">
       <Project>{2fa75fb9-b344-4125-a5e7-88bd3d94ff34}</Project>
       <Name>MO.Autofac.Mvc</Name>

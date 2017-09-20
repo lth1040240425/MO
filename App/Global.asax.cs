@@ -1,6 +1,7 @@
 ﻿using MO.Autofac.Mvc;
 using MO.Core.Dependency;
 using MO.Core.Initialize;
+using MO.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace App
 
             IServicesBuilder builder = new ServicesBuilder();
             IServiceCollection services = builder.Build();
+            services.AddDataServices();//注册数据上下文
+
             IIocBuilder iocBuilder = new MvcAutofacIocBuilder(services);
             IFrameworkInitializer initializer = new FrameworkInitializer();
             initializer.Initialize(iocBuilder);

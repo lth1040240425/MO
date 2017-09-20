@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseInitializer.cs" />
+    <Compile Include="DataConfigReseter.cs" />
     <Compile Include="DataHelper.cs" />
     <Compile Include="DbContextBase.cs" />
     <Compile Include="DbContextInitializerBase.cs" />
@@ -76,6 +77,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repository.cs" />
+    <Compile Include="ServiceCollectionExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MO.Core\MO.Core.csproj">
